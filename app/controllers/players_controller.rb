@@ -12,6 +12,11 @@ class PlayersController < ApplicationController
   # GET /players/1.json
   def show
     @tournament_logs = @player.tournament_logs
+    @data = Hash.new
+
+    @tournament_logs.each do |log|
+      @data[log.created_at] = log.points
+    end
   end
 
   # GET /players/new

@@ -2,7 +2,6 @@
 
 .alerts {
   height: 2em;
-  margin-bottom: 1em;
 }
 .nav-item {
   padding: 0 1em;
@@ -26,4 +25,12 @@ a:active  {
   /* Applies to activated links */
   text-decoration:  underline;
   // color: 						white;
+}
+
+.content-container {
+  padding: 1em;
+}
+
+.profile-container {
+  padding: 1em;
 }

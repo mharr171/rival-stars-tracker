@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @tournament_logs.sort_by{ |tl| [tl.date, tl.points] }.reverse.each do |tournament_log| %>
+    <% @tournament_logs.sort_by{ |tl| [tl.created_at, tl.points] }.reverse.each do |tournament_log| %>
       <%= render partial: '/tournament_logs/log_row', locals: { tournament_log: tournament_log } %>
     <% end %>
   </tbody>

@@ -1,7 +1,7 @@
 <tr scope='row'>
   <td><%= link_to tournament_log.player.name, tournament_log %></td>
   <td><%= tournament_log.points %></td>
-  <td><%= tournament_log.date %></td>
+  <td><%= tournament_log.created_at.strftime("%m-%d-%y") %></td>
   <td><%= link_to 'Edit', edit_tournament_log_path(tournament_log) %></td>
   <td><%= link_to 'Destroy', tournament_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

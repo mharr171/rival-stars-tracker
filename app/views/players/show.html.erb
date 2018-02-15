@@ -1,22 +1,29 @@
 <h1>Player Profile: <%= @player.name.upcase %></h1>
 
-<h3>Tournament Logs</h3>
-<table class='table'>
-  <thead class='thead-dark'>
-    <tr>
-      <th scope='col'>Player</th>
-      <th scope='col'>Points</th>
-      <th scope='col'>Date</th>
-      <th scope='col' colspan="2"></th>
-    </tr>
-  </thead>
+<div id="player-tournament-charts" class='profile-container'>
+  <h3>Tournament Charts</h3>
+  <%= line_chart @data %>
+</div>
 
-  <tbody>
-    <% @tournament_logs.sort_by{ |tl| [tl.date, tl.points] }.reverse.each do |tournament_log| %>
-      <%= render partial: '/tournament_logs/log_row', locals: { tournament_log: tournament_log } %>
-    <% end %>
-  </tbody>
-</table>
+<div id="player-tournament-logs" class='profile-container'>
+  <h3>Tournament Logs</h3>
+  <table class='table'>
+    <thead class='thead-dark'>
+      <tr>
+        <th scope='col'>Player</th>
+        <th scope='col'>Points</th>
+        <th scope='col'>Date</th>
+        <th scope='col' colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tournament_logs.sort_by{ |tl| [tl.created_at, tl.points] }.reverse.each do |tournament_log| %>
+        <%= render partial: '/tournament_logs/log_row', locals: { tournament_log: tournament_log } %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

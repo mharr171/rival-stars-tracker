@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20180215050620) do
   create_table "tournament_logs", force: :cascade do |t|
     t.integer "player_id"
     t.integer "points"
-    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["player_id"], name: "index_tournament_logs_on_player_id"
