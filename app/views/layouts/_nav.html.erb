@@ -1,20 +1,23 @@
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Rival Stars Tracker</a>
 
-  <ul class="nav justify-content-end">
+  <ul class="nav nav-pills nav-fill">
     <% if current_user %>
+      <li class="nav-item">
+        <%= link_to "Players", players_path %>
+      </li>
       <li class="nav-item" style="color:grey;">
         Signed in as <%= link_to current_user.email, edit_user_registration_path %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>
       <li class="nav-item">
-        <%= link_to 'Sign Up', new_user_registration_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Sign In', new_user_session_path %>
+        <%= link_to "Sign In", new_user_session_path %>
       </li>
     <% end %>
   </ul>
