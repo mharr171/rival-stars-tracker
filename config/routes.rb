@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tournament_logs
   resources :players
   devise_for :users
   get 'welcome/index'
