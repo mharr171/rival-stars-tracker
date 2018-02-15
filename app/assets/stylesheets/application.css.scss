@@ -1,1 +1,29 @@
 @import "bootstrap";
+
+.alerts {
+  height: 2em;
+  margin-bottom: 1em;
+}
+.nav-item {
+  padding: 0 1em;
+}
+a:link  {
+  /* Applies to all unvisited links */
+  text-decoration:  none;
+  // color:            inherit;
+}
+a:visited {
+  /* Applies to all visited links */
+  text-decoration:  none;
+  // color:            inherit;
+}
+a:hover {
+  /* Applies to links under the pointer */
+  text-decoration:  none;
+  // color:            inherit;
+}
+a:active  {
+  /* Applies to activated links */
+  text-decoration:  underline;
+  // color: 						white;
+}

@@ -11,19 +11,21 @@
   <body>
     <div class="container">
 
-      <%= render '/layouts/nav' %>
-
-      <% if notice %>
-        <div class="alert alert-success" role="alert">
-          <%= notice %>
-        </div>
-      <% end %>
-      <% if alert %>
-        <div class="alert alert-danger" role="alert">
-          <%= alert %>
-        </div>
-      <% end %>
-
+      <%= render "/layouts/nav" %>
+      <div class="alerts">
+        <% if notice %>
+          <div class="alert alert-success alert-dismissable" role="alert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <%= notice %>
+          </div>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <%= alert %>
+          </div>
+        <% end %>
+      </div>
       <%= yield %>
     </div>
   </body>
