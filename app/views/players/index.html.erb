@@ -4,15 +4,14 @@
   <thead class='thead-dark'>
     <tr>
       <th scope='col'>Name</th>
-      <th scope='col' colspan="3"></th>
+      <th scope='col' colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @players.each do |player| %>
       <tr scope='row'>
-        <td><%= player.name %></td>
-        <td><%= link_to 'Show', player %></td>
+        <td><%= link_to player.name, player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

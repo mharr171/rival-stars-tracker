@@ -1,10 +1,13 @@
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Rival Stars Tracker</a>
+  <%= link_to "Rival Stars Tracker", root_path, class:"navbar-brand" %>
 
   <ul class="nav nav-pills nav-fill">
     <% if current_user %>
       <li class="nav-item">
         <%= link_to "Players", players_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Logs", tournament_logs_path %>
       </li>
       <li class="nav-item" style="color:grey;">
         Signed in as <%= link_to current_user.email, edit_user_registration_path %>

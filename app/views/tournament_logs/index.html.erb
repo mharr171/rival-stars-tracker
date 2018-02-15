@@ -8,20 +8,13 @@
       <th scope='col'>Player</th>
       <th scope='col'>Points</th>
       <th scope='col'>Date</th>
-      <th scope='col' colspan="3"></th>
+      <th scope='col' colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @tournament_logs.sort_by{ |tl| [tl.date, tl.points] }.reverse.each do |tournament_log| %>
-      <tr scope='row'>
-        <td><%= tournament_log.player.name %></td>
-        <td><%= tournament_log.points %></td>
-        <td><%= tournament_log.date %></td>
-        <td><%= link_to 'Show', tournament_log %></td>
-        <td><%= link_to 'Edit', edit_tournament_log_path(tournament_log) %></td>
-        <td><%= link_to 'Destroy', tournament_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render partial: '/tournament_logs/log_row', locals: { tournament_log: tournament_log } %>
     <% end %>
   </tbody>
 </table>
